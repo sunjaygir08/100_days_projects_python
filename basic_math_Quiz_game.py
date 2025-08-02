@@ -58,6 +58,6 @@ def math_quiz():
     else:
         print("Keep practicing! You can improve your maths skills.")
 
-    print(f"\nYou took {remain_time_time:.2f} seconds to complete the quiz.")
+    print(f"\nYou took {remain_time:.2f} seconds to complete the quiz.")
 
 math_quiz()
