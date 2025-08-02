@@ -1,5 +1,7 @@
-#Basic Maths Quiz Game
+# Basic Maths Quiz Game
+
 import random
+import time
 
 def generate_question():
     num1 = random.randint(1, 10)
@@ -26,6 +28,9 @@ def math_quiz():
     if round <= 0:
         print("Please enter a valid number of rounds.")
         return
+    
+    start_time = time.time()            # Start timer before questions
+    
     for i in range(round):  
         question, correct_answer = generate_question()
         print(f"\nQuestion {i + 1}: {question}")
@@ -41,6 +46,9 @@ def math_quiz():
         else:
             print(f"Wrong! The correct answer was {correct_answer}.")
 
+    end_time = time.time()              # End timer after last answer
+    remain_time = end_time - start_time
+    
     print("\n ----- Game Over -----")
     print(f"Your final score is {score} out of {round}.")
     if score == round:
@@ -49,5 +57,7 @@ def math_quiz():
         print("Good job! You have a solid understanding of basic maths.")
     else:
         print("Keep practicing! You can improve your maths skills.")
+
+    print(f"\nYou took {remain_time_time:.2f} seconds to complete the quiz.")
 
 math_quiz()
